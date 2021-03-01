@@ -1,13 +1,15 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using FRBC_Coding_Assignment.PorterStemmer.Interfaces;
+using System.Diagnostics.CodeAnalysis;
 
-namespace FRBC_Coding_Assignment
+namespace FRBC_Coding_Assignment.PorterStemmer
 {
 	/// <summary>
 	/// This Class was found at: https://tartarus.org/martin/PorterStemmer/csharp4.txt
 	/// I was going to use a nuget package but I wanted to ensure to follow the assignment and use the algorithm as explained in the document.
+	/// I added a interface to help with unit testing
 	/// </summary>
 	[ExcludeFromCodeCoverage]
-    public class PorterStemmer
+    public class PorterStemmer : IPorterStemmer
 	{
 		private char[] wordArray;       // character array copy of the given string
 		private int stem, end;          // indices to the current end (last letter) of the stem and the word in the array

@@ -56,10 +56,5 @@ namespace FRBC_Coding_Assignment
             //prints out the 20 most commonly occurring terms (not including stop words) in descending order of frequency
 
         }
-
-        private string[] Splitter(string input)
-        {
-            return Regex.Split(input, @"\W+");
-        }
     }
 }
