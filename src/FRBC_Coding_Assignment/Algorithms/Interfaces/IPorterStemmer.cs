@@ -1,4 +1,4 @@
-﻿namespace FRBC_Coding_Assignment.PorterStemmer.Interfaces
+﻿namespace FRBC_Coding_Assignment.Algorithms.Interfaces
 {
     public interface IPorterStemmer
     {

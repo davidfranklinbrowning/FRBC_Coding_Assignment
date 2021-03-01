@@ -1,4 +1,6 @@
-﻿using FRBC_Coding_Assignment.PorterStemmer.Interfaces;
+﻿using FRBC_Coding_Assignment.Algorithms;
+using FRBC_Coding_Assignment.Algorithms.Interfaces;
+using FRBC_Coding_Assignment.PorterStemmer.Interfaces;
 using FRBC_Coding_Assignment.Services;
 using FRBC_Coding_Assignment.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +29,7 @@ namespace FRBC_Coding_Assignment
             services.AddSingleton<IFileService, FileService>();
             services.AddSingleton<IStringCleanerService, StringCleanerService>();
             services.AddSingleton<IPorterStemmingService, PorterStemmingService>();
-            services.AddSingleton<IPorterStemmer, PorterStemmer.PorterStemmer>();
+            services.AddSingleton<IPorterStemmer, PorterStemmer>();
             services.AddSingleton<ConsoleApp>();
             serviceProvider = services.BuildServiceProvider(true);
         }
