@@ -12,14 +12,17 @@ namespace FRBC_Coding_Assignment
     {
         private readonly IFileService fileService;
         private readonly IStringCleanerService stringCleanerService;
+        private readonly IPorterStemmingService porterStemmingService;
 
         public ConsoleApp(
             IFileService fileService,
-            IStringCleanerService stringCleanerService
+            IStringCleanerService stringCleanerService,
+            IPorterStemmingService porterStemmingService
         )
         {
             this.fileService = fileService;
             this.stringCleanerService = stringCleanerService;
+            this.porterStemmingService = porterStemmingService;
         }
 
         public void Run()
@@ -44,9 +47,11 @@ namespace FRBC_Coding_Assignment
             var alphaOnlyText = stringCleanerService.RemoveNonAlphaCharacters(string.Join(" ", results));
 
             // Stemming Algorithm
-
+            var thirdWordArray = alphaOnlyText.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            var stemmingArray = porterStemmingService.RunStemmingAlgorithm(thirdWordArray);
 
             // Computes the frequency of each term
+
 
             //prints out the 20 most commonly occurring terms (not including stop words) in descending order of frequency
 
