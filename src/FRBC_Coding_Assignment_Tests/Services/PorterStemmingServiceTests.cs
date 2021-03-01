@@ -3,10 +3,7 @@ using FluentAssertions;
 using FRBC_Coding_Assignment.Algorithms.Interfaces;
 using FRBC_Coding_Assignment.Services;
 using Moq;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 using Xunit;
 
 namespace FRBC_Coding_Assignment_Tests.Services
