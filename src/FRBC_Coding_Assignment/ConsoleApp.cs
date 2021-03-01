@@ -25,21 +25,23 @@ namespace FRBC_Coding_Assignment
         public void Run()
         {
             // Read a file
-            var dirtyText = fileService.ReadAllTextFromFile("Text1");
+            var dirtyText = fileService.ReadAllTextFromFile("Text2");
 
             var nonUnicodeText = stringCleanerService.RemoveUnicodeCharacters(dirtyText);
 
             // Remove Stop Words
-            var noPunctuation = stringCleanerService.RemovePunctuation(nonUnicodeText);
-            var firstWordArray = noPunctuation.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-            
+            var noPunctuationOrSymbols = stringCleanerService.RemovePunctuationAndSymbols(nonUnicodeText);
+
+            var firstWordArray = noPunctuationOrSymbols.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+            var secondWordArray = stringCleanerService.RemoveApostropheExceptConjunctions(firstWordArray);
+
             var stopwords = fileService.GetStopWords("stopwords");
 
-            var results = firstWordArray.Except(stopwords).ToArray();
+            var results = secondWordArray.Except(stopwords).ToArray(); //2850
 
             // Remove all non alpha characters
             var alphaOnlyText = stringCleanerService.RemoveNonAlphaCharacters(string.Join(" ", results));
-
 
             // Stemming Algorithm
 

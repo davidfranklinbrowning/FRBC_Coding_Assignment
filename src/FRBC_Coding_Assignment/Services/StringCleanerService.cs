@@ -1,4 +1,5 @@
 ﻿using FRBC_Coding_Assignment.Services.Interfaces;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -15,17 +16,14 @@ namespace FRBC_Coding_Assignment.Services
         {
             return Regex.Replace(text, @"\t|\n|\r|\e", " "); ;
         }
-
-        // Need to account for apostrophy
-        public string RemovePunctuation(string text)
+        
+        public string RemovePunctuationAndSymbols(string text)
         {
             var stringBuilder = new StringBuilder();
 
-            var test = Regex.Replace(text, @"[^\w\d'\s]+", " "); ;
-
             foreach (char character in text)
             {
-                if (character == '\'' || !char.IsPunctuation(character))
+                if (IsCharacterApostropheOrNonPunctuationOrNonSymbol(character))
                 {
                     stringBuilder.Append(character);
                 }
@@ -36,6 +34,25 @@ namespace FRBC_Coding_Assignment.Services
             }
 
            return stringBuilder.ToString();
+        }
+
+        public string[] RemoveApostropheExceptConjunctions(string[] wordArray)
+        {
+            var stringList = new List<string>();
+            foreach(var word in wordArray)
+            {
+                if (word.Length > 0 && !word.Equals("\'"))
+                {
+                    stringList.Add(word.Trim('\''));
+                }                
+            }
+
+            return stringList.ToArray();
+        }
+
+        private bool IsCharacterApostropheOrNonPunctuationOrNonSymbol(char character)
+        {
+            return character == '\'' || (!char.IsPunctuation(character) && !char.IsSymbol(character));
         }
     }
 }

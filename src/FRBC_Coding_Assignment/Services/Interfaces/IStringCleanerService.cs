@@ -4,6 +4,7 @@
     {
         string RemoveNonAlphaCharacters(string text);
         string RemoveUnicodeCharacters(string text);
-        string RemovePunctuation(string text);
+        string RemovePunctuationAndSymbols(string text);
+        string[] RemoveApostropheExceptConjunctions(string[] wordArray);
     }
 }
