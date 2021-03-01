@@ -16,14 +16,29 @@ namespace FRBC_Coding_Assignment.Services
         }
         public string ReadAllTextFromFile(string fileName)
         {
-            return File.ReadAllText($@"../../../{fileName}.txt");
+            try
+            {
+                return File.ReadAllText($@"../../../{fileName}.txt");
+            }
+            catch
+            {
+                return string.Empty;
+            }
+            
         }
 
         public string[] GetStopWords(string fileName)
         {
-            var text = File.ReadAllText($@"../../../{fileName}.txt");
-            var cleanWords = stringCleanerService.RemoveUnicodeCharacters(text);
-            return cleanWords.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            try
+            {
+                var text = File.ReadAllText($@"../../../{fileName}.txt");
+                var cleanWords = stringCleanerService.RemoveUnicodeCharacters(text);
+                return cleanWords.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            }
+            catch
+            {
+                return new string[0];
+            }
         }
     }
 }
