@@ -1,4 +1,5 @@
-﻿using FRBC_Coding_Assignment.Services.Interfaces;
+﻿using FRBC_Coding_Assignment.Configurations;
+using FRBC_Coding_Assignment.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,15 @@ namespace FRBC_Coding_Assignment.Services
 {
     public class WordOccurrenceService : IWordOccurrenceService
     {
+        private readonly int maxNumberToPrint;
+
+        public WordOccurrenceService(
+            OccurrenceConfiguration configuration
+        )
+        {
+            maxNumberToPrint = configuration.MaxNumberToPrint;
+        }
+
         public Dictionary<string, int> GetWordOccurences(string[] wordArray)
         {
             Dictionary<string, int> wordCount = new Dictionary<string, int>();
@@ -32,7 +42,7 @@ namespace FRBC_Coding_Assignment.Services
 
         public void PrintTopWordOccurences(Dictionary<string, int> orderedWordOccurences)
         {
-            var keyValuePair = orderedWordOccurences.Take(20);
+            var keyValuePair = orderedWordOccurences.Take(maxNumberToPrint);
             foreach (KeyValuePair<string, int> pair in keyValuePair)
             {                
                 Console.WriteLine($"{pair.Key} - Number of Occurences: {pair.Value}");
