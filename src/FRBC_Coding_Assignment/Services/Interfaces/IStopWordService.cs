@@ -1,7 +1,9 @@
-﻿namespace FRBC_Coding_Assignment.Services.Interfaces
+﻿using System.Collections.Generic;
+
+namespace FRBC_Coding_Assignment.Services.Interfaces
 {
     public interface IStopWordService
     {
-        string[] RemoveStopWords(string[] wordArray, string[] stopWords);
+        List<string> RemoveStopWords(List<string> wordList);
     }
 }

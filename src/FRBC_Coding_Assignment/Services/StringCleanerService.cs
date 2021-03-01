@@ -36,7 +36,7 @@ namespace FRBC_Coding_Assignment.Services
            return stringBuilder.ToString();
         }
 
-        public string[] RemoveApostropheExceptConjunctions(string[] wordArray)
+        public List<string> RemoveApostropheExceptConjunctions(string[] wordArray)
         {
             var stringList = new List<string>();
             foreach(var word in wordArray)
@@ -47,7 +47,7 @@ namespace FRBC_Coding_Assignment.Services
                 }                
             }
 
-            return stringList.ToArray();
+            return stringList;
         }
 
         private bool IsCharacterApostropheOrNonPunctuationOrNonSymbol(char character)

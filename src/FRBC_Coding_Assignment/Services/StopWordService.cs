@@ -1,18 +1,28 @@
 ﻿using FRBC_Coding_Assignment.Services.Interfaces;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace FRBC_Coding_Assignment.Services
 {
     public class StopWordService : IStopWordService
     {
-        public string[] RemoveStopWords(string[] wordArray, string[] stopWords)
+        private readonly IFileService fileService;
+
+        public StopWordService(
+            IFileService fileService    
+        )
         {
-            var wordList = wordArray.ToList();
+            this.fileService = fileService;
+        }
+
+        public List<string> RemoveStopWords(List<string> wordList)
+        {
+            var stopWords = fileService.GetStopWords("stopwords");
+            
             foreach (var stopWord in stopWords)
             {
-                wordList.RemoveAll(word => word.Equals(stopWord));
+                wordList.RemoveAll(word => word.ToLower().Equals(stopWord.ToLower()));
             }
-            return wordList.ToArray();
+            return wordList;
         }
     }
 }
