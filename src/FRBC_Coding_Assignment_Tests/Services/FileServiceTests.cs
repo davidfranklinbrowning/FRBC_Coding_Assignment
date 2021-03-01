@@ -6,7 +6,7 @@ using Moq;
 using System.IO;
 using Xunit;
 
-namespace FRBC_Coding_Assignment_Tests
+namespace FRBC_Coding_Assignment_Tests.Services
 {
     public class FileServiceTests
     {
