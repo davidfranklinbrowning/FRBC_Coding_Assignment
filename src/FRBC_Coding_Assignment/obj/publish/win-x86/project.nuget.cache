@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "c4gsLBiHTB7BxKv0CaTM7/bZoqz7e/JYCqKU2xSWTiBKMl5eyVF0F27kKJ3sTvT812r8JvbLcLLVP55NPBOaMg==",
+  "success": true,
+  "projectFilePath": "D:\\FRBC\\FRBC_Coding_Assignment\\src\\FRBC_Coding_Assignment\\FRBC_Coding_Assignment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\5.0.0\\microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.configuration.json\\5.0.0\\microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\5.0.0\\microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.12\\microsoft.netcore.app.runtime.win-x86.3.1.12.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.12\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.12.nupkg.sha512",
+    "C:\\Users\\david.browning\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.12\\microsoft.aspnetcore.app.runtime.win-x86.3.1.12.nupkg.sha512"
+  ],
+  "logs": []
+}
