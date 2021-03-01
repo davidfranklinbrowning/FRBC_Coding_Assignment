@@ -20,8 +20,9 @@ namespace FRBC_Coding_Assignment.Services
             {
                 return File.ReadAllText($@"{filePath}");
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error when reading text file: {ex}");
                 return string.Empty;
             }
             
@@ -35,8 +36,9 @@ namespace FRBC_Coding_Assignment.Services
                 var cleanWords = stringCleanerService.RemoveUnicodeCharacters(text);
                 return cleanWords.Split(" ", StringSplitOptions.RemoveEmptyEntries);
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error when reading StopWords text file: {ex}");
                 return new string[0];
             }
         }

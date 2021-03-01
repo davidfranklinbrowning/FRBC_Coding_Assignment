@@ -1,6 +1,5 @@
 ﻿using FRBC_Coding_Assignment.Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
@@ -14,7 +13,6 @@ namespace FRBC_Coding_Assignment
         private readonly IPorterStemmingService porterStemmingService;
         private readonly IWordOccurrenceService wordOccurrenceService;
         private readonly IStopWordService stopWordService;
-        private readonly Dictionary<string, string> fileNames = new Dictionary<string, string> { { "1", "Text1" }, { "2", "Text2"} };
 
         public ConsoleApp(
             IFileService fileService,
