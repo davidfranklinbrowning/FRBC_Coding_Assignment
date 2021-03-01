@@ -17,8 +17,8 @@ namespace FRBC_Coding_Assignment_Tests.Services
         )
         {
             // ARRANGE
-            var fileName = "TestFile";
-            var expected = File.ReadAllText($@"../../../{fileName}.txt");
+            var fileName = "../../../TestFile.txt";
+            var expected = File.ReadAllText($@"{fileName}");
 
             // ACT
             var results = service.ReadAllTextFromFile(fileName);
@@ -52,7 +52,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
         )
         {
             // ARRANGE
-            var fileName = "StopTestFile";
+            var fileName = "../../../StopTestFile.txt";
             var expectedString = "test file " +
                 "here     more";
             stringCleanerServiceMock.Setup(g => g.RemoveUnicodeCharacters(It.IsAny<string>())).Returns(expectedString);

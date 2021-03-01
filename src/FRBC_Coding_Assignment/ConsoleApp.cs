@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 
 namespace FRBC_Coding_Assignment
 {
@@ -35,15 +36,14 @@ namespace FRBC_Coding_Assignment
             try
             {
                 // Get User Input
-                Console.WriteLine("Please pick one:");
-                Console.WriteLine("1. Text1.txt");
-                Console.WriteLine("2. Text2.txt");
+                Console.WriteLine("Please Enter a file with complete path.");
+                Console.WriteLine("For example: C:\\Users\\david.browning\\Desktop\\Text1.txt");
 
-                string fileChoice = Console.ReadLine();
-                if (fileChoice.Equals("1") || fileChoice.Equals("2"))
+                string filePath = Console.ReadLine();
+                if (filePath.IndexOfAny(Path.GetInvalidPathChars()) == -1)
                 {
                     // Read a file
-                    var dirtyText = fileService.ReadAllTextFromFile(fileNames[fileChoice]);
+                    var dirtyText = fileService.ReadAllTextFromFile(filePath);
                     var nonUnicodeText = stringCleanerService.RemoveUnicodeCharacters(dirtyText);
 
                     // Remove Stop Words

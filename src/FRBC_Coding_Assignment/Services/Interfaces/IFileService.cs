@@ -2,7 +2,7 @@
 {
     public interface IFileService
     {
-        string ReadAllTextFromFile(string fileName);
-        string[] GetStopWords(string fileName);
+        string ReadAllTextFromFile(string filePath);
+        string[] GetStopWords(string filePath);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FRBC_Coding_Assignment.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace FRBC_Coding_Assignment.Services
@@ -16,7 +17,12 @@ namespace FRBC_Coding_Assignment.Services
 
         public List<string> RemoveStopWords(List<string> wordList)
         {
-            var stopWords = fileService.GetStopWords("stopwords");
+            Console.WriteLine("Please enter a file with complete path for the stopwords.");
+            Console.WriteLine("For example: C:\\Users\\david.browning\\Desktop\\Text1.txt");
+
+            var stopWordPath = Console.ReadLine();
+
+            var stopWords = fileService.GetStopWords(stopWordPath);
             
             foreach (var stopWord in stopWords)
             {

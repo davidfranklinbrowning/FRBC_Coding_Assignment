@@ -14,11 +14,11 @@ namespace FRBC_Coding_Assignment.Services
         {
             this.stringCleanerService = stringCleanerService;
         }
-        public string ReadAllTextFromFile(string fileName)
+        public string ReadAllTextFromFile(string filePath)
         {
             try
             {
-                return File.ReadAllText($@"../../../{fileName}.txt");
+                return File.ReadAllText($@"{filePath}");
             }
             catch
             {
@@ -27,11 +27,11 @@ namespace FRBC_Coding_Assignment.Services
             
         }
 
-        public string[] GetStopWords(string fileName)
+        public string[] GetStopWords(string filePath)
         {
             try
             {
-                var text = File.ReadAllText($@"../../../{fileName}.txt");
+                var text = File.ReadAllText($@"{filePath}");
                 var cleanWords = stringCleanerService.RemoveUnicodeCharacters(text);
                 return cleanWords.Split(" ", StringSplitOptions.RemoveEmptyEntries);
             }
