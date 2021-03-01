@@ -27,8 +27,10 @@ namespace FRBC_Coding_Assignment
             var services = new ServiceCollection();
             services.AddSingleton<IFileService, FileService>();
             services.AddSingleton<IStringCleanerService, StringCleanerService>();
+            services.AddSingleton<IStopWordService, StopWordService>();
             services.AddSingleton<IPorterStemmingService, PorterStemmingService>();
             services.AddSingleton<IPorterStemmer, PorterStemmer>();
+            services.AddSingleton<IWordOccurrenceService, WordOccurrenceService>();
             services.AddSingleton<ConsoleApp>();
             serviceProvider = services.BuildServiceProvider(true);
         }

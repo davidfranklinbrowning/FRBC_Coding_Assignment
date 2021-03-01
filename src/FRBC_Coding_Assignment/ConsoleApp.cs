@@ -1,9 +1,6 @@
 ﻿using FRBC_Coding_Assignment.Services.Interfaces;
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace FRBC_Coding_Assignment
 {
@@ -13,16 +10,22 @@ namespace FRBC_Coding_Assignment
         private readonly IFileService fileService;
         private readonly IStringCleanerService stringCleanerService;
         private readonly IPorterStemmingService porterStemmingService;
+        private readonly IWordOccurrenceService wordOccurrenceService;
+        private readonly IStopWordService stopWordService;
 
         public ConsoleApp(
             IFileService fileService,
             IStringCleanerService stringCleanerService,
-            IPorterStemmingService porterStemmingService
+            IPorterStemmingService porterStemmingService,
+            IWordOccurrenceService wordOccurrenceService,
+            IStopWordService stopWordService
         )
         {
             this.fileService = fileService;
             this.stringCleanerService = stringCleanerService;
             this.porterStemmingService = porterStemmingService;
+            this.wordOccurrenceService = wordOccurrenceService;
+            this.stopWordService = stopWordService;
         }
 
         public void Run()
@@ -41,7 +44,7 @@ namespace FRBC_Coding_Assignment
 
             var stopwords = fileService.GetStopWords("stopwords");
 
-            var results = secondWordArray.Except(stopwords).ToArray(); //2850
+            var results = stopWordService.RemoveStopWords(secondWordArray, stopwords);
 
             // Remove all non alpha characters
             var alphaOnlyText = stringCleanerService.RemoveNonAlphaCharacters(string.Join(" ", results));
@@ -51,10 +54,11 @@ namespace FRBC_Coding_Assignment
             var stemmingArray = porterStemmingService.RunStemmingAlgorithm(thirdWordArray);
 
             // Computes the frequency of each term
-
+            var wordOccurrenceCount = wordOccurrenceService.GetWordOccurences(stemmingArray);
+            var sortedOccurrenceCount = wordOccurrenceService.SortWordOccurences(wordOccurrenceCount);
 
             //prints out the 20 most commonly occurring terms (not including stop words) in descending order of frequency
-
+            wordOccurrenceService.PrintTopWordOccurences(sortedOccurrenceCount);
         }
     }
 }
