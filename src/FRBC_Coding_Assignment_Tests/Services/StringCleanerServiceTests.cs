@@ -1,10 +1,12 @@
 ﻿using FluentAssertions;
 using FRBC_Coding_Assignment.Services;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace FRBC_Coding_Assignment_Tests.Services
 {
+    [ExcludeFromCodeCoverage]
     public class StringCleanerServiceTests
     {
         [Theory]
@@ -70,7 +72,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
         )
         {
             // ARRANGE
-            var sampleTextArray = new string[] { "This", "is", "sample", "that\'s", "it", "\'" };
+            var sampleTextArray = new string[] { "This", "is", "sample", "that\'s", "it", "\'", "" };
 
             // ACT
             var results = service.RemoveApostropheExceptConjunctions(sampleTextArray);

@@ -15,13 +15,8 @@ namespace FRBC_Coding_Assignment.Services
             this.fileService = fileService;
         }
 
-        public List<string> RemoveStopWords(List<string> wordList)
+        public List<string> RemoveStopWords(List<string> wordList, string stopWordPath)
         {
-            Console.WriteLine("Please enter a file with complete path for the stopwords.");
-            Console.WriteLine("For example: C:\\Users\\david.browning\\Desktop\\Text1.txt");
-
-            var stopWordPath = Console.ReadLine();
-
             var stopWords = fileService.GetStopWords(stopWordPath);
             
             foreach (var stopWord in stopWords)

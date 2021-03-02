@@ -3,11 +3,13 @@ using FluentAssertions;
 using FRBC_Coding_Assignment.Services;
 using FRBC_Coding_Assignment.Services.Interfaces;
 using Moq;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Xunit;
 
 namespace FRBC_Coding_Assignment_Tests.Services
 {
+    [ExcludeFromCodeCoverage]
     public class FileServiceTests
     {
         [Theory]

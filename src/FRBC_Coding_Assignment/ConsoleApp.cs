@@ -48,7 +48,13 @@ namespace FRBC_Coding_Assignment
                     var noPunctuationOrSymbols = stringCleanerService.RemovePunctuationAndSymbols(nonUnicodeText);
                     var semiSanitizedArray = noPunctuationOrSymbols.Split(" ", StringSplitOptions.RemoveEmptyEntries);
                     var sanitizedList = stringCleanerService.RemoveApostropheExceptConjunctions(semiSanitizedArray);
-                    var stopWordRemovedList = stopWordService.RemoveStopWords(sanitizedList);
+
+                    Console.WriteLine("Please enter a file with complete path for the stopwords.");
+                    Console.WriteLine("For example: C:\\Users\\david.browning\\Desktop\\Text1.txt");
+
+                    var stopWordPath = Console.ReadLine();
+
+                    var stopWordRemovedList = stopWordService.RemoveStopWords(sanitizedList, stopWordPath);
 
                     // Remove all non alpha characters
                     var alphaOnlyText = stringCleanerService.RemoveNonAlphaCharacters(string.Join(" ", stopWordRemovedList));

@@ -4,10 +4,12 @@ using FRBC_Coding_Assignment.Services;
 using FRBC_Coding_Assignment.Services.Interfaces;
 using Moq;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace FRBC_Coding_Assignment_Tests.Services
 {
+    [ExcludeFromCodeCoverage]
     public class StopWordServiceTests
     {
         [Theory]
@@ -15,6 +17,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
         public void GivenWordList_WhenRemoveStopWords_ThenReturnListWithoutStopWords(
             [Frozen] Mock<IFileService> fileServiceMock,
             List<string> wordList,
+            string stopWordPath,
             StopWordService service
         )
         {
@@ -24,7 +27,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
             fileServiceMock.Setup(g => g.GetStopWords(It.IsAny<string>())).Returns(stopWords);
 
             // ACT
-            var results = service.RemoveStopWords(wordList);
+            var results = service.RemoveStopWords(wordList, stopWordPath);
 
             // ASSERT
             results.Should().NotBeNullOrEmpty();
@@ -37,6 +40,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
         public void GivenEmptyWordList_WhenRemoveStopWords_ThenReturnListWithoutStopWords(
             [Frozen] Mock<IFileService> fileServiceMock,
             List<string> wordList,
+            string stopWordPath,
             StopWordService service
         )
         {
@@ -46,7 +50,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
             fileServiceMock.Setup(g => g.GetStopWords(It.IsAny<string>())).Returns(stopWords);
 
             // ACT
-            var results = service.RemoveStopWords(wordList);
+            var results = service.RemoveStopWords(wordList, stopWordPath);
 
             // ASSERT
             results.Should().BeNullOrEmpty();
@@ -59,6 +63,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
         public void GivenEmptyStopWordList_WhenRemoveStopWords_ThenReturnListWithoutStopWords(
             [Frozen] Mock<IFileService> fileServiceMock,
             List<string> wordList,
+            string stopWordPath,
             StopWordService service
         )
         {
@@ -68,7 +73,7 @@ namespace FRBC_Coding_Assignment_Tests.Services
             fileServiceMock.Setup(g => g.GetStopWords(It.IsAny<string>())).Returns(stopWords);
 
             // ACT
-            var results = service.RemoveStopWords(wordList);
+            var results = service.RemoveStopWords(wordList, stopWordPath);
 
             // ASSERT
             results.Should().NotBeNullOrEmpty();

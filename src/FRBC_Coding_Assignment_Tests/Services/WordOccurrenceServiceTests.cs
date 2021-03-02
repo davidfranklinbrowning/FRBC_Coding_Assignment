@@ -1,11 +1,13 @@
 ﻿using FluentAssertions;
 using FRBC_Coding_Assignment.Services;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Xunit;
 
 namespace FRBC_Coding_Assignment_Tests.Services
 {
+    [ExcludeFromCodeCoverage]
     public class WordOccurrenceServiceTests
     {
         [Theory]

@@ -45,7 +45,7 @@ namespace FRBC_Coding_Assignment.Services
             var keyValuePair = orderedWordOccurences.Take(maxNumberToPrint);
             foreach (KeyValuePair<string, int> pair in keyValuePair)
             {                
-                Console.WriteLine($"{pair.Key} - Number of Occurences: {pair.Value}");
+                Console.WriteLine($"{pair.Key} - Number of Occurrences: {pair.Value}");
             }
         }
     }
