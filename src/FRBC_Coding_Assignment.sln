@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FRBC_Coding_Assignment", "FRBC_Coding_Assignment\FRBC_Coding_Assignment.csproj", "{5EAAAFB2-EE21-4350-84F7-50A523232F50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57096007-A0A0-4B32-A09D-1A51E4DFFCA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FRBC_Coding_Assignment_Tests", "FRBC_Coding_Assignment_Tests\FRBC_Coding_Assignment_Tests.csproj", "{686B3EEA-D6C2-489E-8818-EBDD278C7F19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EAAAFB2-EE21-4350-84F7-50A523232F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EAAAFB2-EE21-4350-84F7-50A523232F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EAAAFB2-EE21-4350-84F7-50A523232F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EAAAFB2-EE21-4350-84F7-50A523232F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{686B3EEA-D6C2-489E-8818-EBDD278C7F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686B3EEA-D6C2-489E-8818-EBDD278C7F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686B3EEA-D6C2-489E-8818-EBDD278C7F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{686B3EEA-D6C2-489E-8818-EBDD278C7F19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{686B3EEA-D6C2-489E-8818-EBDD278C7F19} = {57096007-A0A0-4B32-A09D-1A51E4DFFCA9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A95A95A-F5A0-40E2-9CDC-4A7ED67DDEF4}
+	EndGlobalSection
+EndGlobal

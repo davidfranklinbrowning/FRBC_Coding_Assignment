@@ -1,0 +1,2 @@
+D:\FRBC\FRBC_Coding_Assignment\src\FRBC_Coding_Assignment\bin\Release\netcoreapp3.1\publish\FRBC_Coding_Assignment.pdb
+D:\FRBC\FRBC_Coding_Assignment\src\FRBC_Coding_Assignment\bin\Release\netcoreapp3.1\publish\FRBC_Coding_Assignment.exe
